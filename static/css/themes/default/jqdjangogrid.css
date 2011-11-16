@@ -1,0 +1,130 @@
+.form_datagrid {
+  padding: 0px;
+  margin: 0px;
+}
+
+.div_search_field {
+  width: 100%;
+  background: #d8d8d8;
+  text-align: left;
+}
+
+.id_search_text {
+  width: 50%;
+  background: white;
+  border: 2px solid #d8d8d8;
+  border-bottom: 0px;
+  font-size: 12px;
+  color: gray;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/* table structure */
+thead { display: table-header-group; }
+tfoot { display: table-footer-group; }
+.datagrid_footer input[type="submit"], .datagrid_footer input[type="button"], .table_datagrid input[type="submit"], .table_datagrid input[type="button"] {
+  border: 1px solid #5b7aa1;
+  background: url(images/button_bg.jpg);
+  height: 26px;
+  width: 100px;
+}
+
+.table_datagrid input[type="text"] {
+background: white;
+  border: 2px solid #d8d8d8;
+  border-bottom: 0px;
+  font-size: 12px;
+  color: gray;
+}
+
+.table_datagrid input[type="radio"] { border: none; }
+
+.table_datagrid {
+  width: 100%;
+  font-size: 10pt;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.table_datagrid, .table_datagrid th, .table_datagrid tr, .table_datagrid td {
+  border: 1px solid #d8d8d8;
+}
+
+.row0 { background: #b2d2ff; cursor: pointer; }
+.row1 { background: #f5fbfc; cursor: pointer; }
+.row2 { background: #ffffff; cursor: pointer; }
+/*
+.row0 { background: #FDFFCD; cursor: pointer; }
+.row1 { background: #E4E4E4; cursor: pointer; }
+.row2 { background: #E9EBF0; cursor: pointer; }
+*/
+
+/* table's header */
+.sortable {
+  text-align: center;
+  font-size: 10pt;
+  background: url(images/header_bg.gif);
+  height: 23px;
+}
+.sortable th h3 {font-size:9pt; margin:0px; padding:0px; color: #333333; }
+.sortable td {border-bottom:1px solid #c6d5e1; border-right:1px solid #c6d5e1}
+.sortable .head h3 {background:url(images/sort.gif) 7px center no-repeat; cursor:pointer; padding-left:18px}
+.sortable .desc, .sortable .asc {background:url(images/header_selected_bg.gif); }
+.sortable .desc h3 {background:url(images/desc.gif) 7px center no-repeat; cursor:pointer; padding-left:18px}
+.sortable .asc h3 {background:url(images/asc.gif) 7px  center no-repeat; cursor:pointer; padding-left:18px}
+.sortable .head:hover, .sortable .desc:hover, .sortable .asc:hover {color:black;}
+
+/* navigation bar */
+.datagrid_footer {
+  background: url(images/footer_bg.gif);
+  border: 2px solid #d8d8d8;
+  border-top: 0px;
+  margin-top: 0px;
+  font-size: 10pt;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.datagrid_footer_left_buttons {
+  float: left;
+  height: 16px;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.datagrid_footer_right_buttons {
+  float: right;
+  height: 16px;
+  padding-right: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.datagrid_nav_button {
+  float:left;
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.datagrid_nav_text {
+  float:left;
+  height: 16px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding: 1px;
+}
+
+/* controls */
+.datagrid_nav_first { background : url(images/button_first.gif); }
+.datagrid_nav_previous { background : url(images/button_previous.gif); }
+.datagrid_nav_next { background : url(images/button_next.gif); }
+.datagrid_nav_last { background : url(images/button_last.gif); }
+.id_current_page {
+  width: 20px;
+  height: 16px;
+  padding: 0px;
+  margin: 0px;
+  font-size: 9pt;
+  border: 1px solid silver;
+}

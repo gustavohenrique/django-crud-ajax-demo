@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block script %}
+{{ block.super }}
+
+<script type="text/javascript">
+<!-- Old component to ajax pagination -->
+$(document).ready(function() {
+    $('#results').datagrid({
+        'appLabel': 'family',
+        'modelName': 'People',
+        'cols': {
+            "pk": {"label": "", "width":"10px"},
+            "first_name": {"label": "First Name", "width": "300px"},
+            "last_name": {"label": "last Name", "width": "300px;"},
+            "email": {"label": "Email", "width": "200px"},
+            "relative_peoples": {"label": "Relatives", "width": "100px"},
+        },
+        'searchFilter': 'first_name__icontains="%s"',
+        'buttons': {
+            "btAlert": {"type": "button", "label": "Show PK", "onclick": "alert('The PK='+getDatagridSelected())"},
+        },
+        'numItensPerPage': 2,
+        'canShowGenericButtonDelete': false,
+    });
+});
+</script>
+
+{% endblock %}
+
+{% block body %}
+<body>
+    {% include 'people_form.html' %}
+    
+    <hr/>
+    
+    <form name="searchform" method="get" id="id_searchform" action="{% url people_filter %}">
+        <p>Simple Search: <input type="text" name="s" id="id_s" /> <input type="submit" name="search" id="id_search" value="Search" /></p>
+    </form>
+    
+    <hr/>
+    
+    <p>Peoples (Ajax mode)</p>
+    <div id="results" style="width:600px;">
+        <!--
+        <table>
+            <thead>
+                <tr>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>E-mail</td>
+                    <td>Relateds</td>
+                </tr>
+            </thead>
+            <tbody>
+            {% for p in peoples %}
+                <tr>
+                    <td>{{ p.first_name }}</td>
+                    <td>{{ p.last_name }}</td>
+                    <td>{{ p.email }}</td>
+                    <td>{{ p.relative_peoples }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        -->
+    </div>
+    
+    <hr/>
+    
+    <p>Importer from CSV</p>
+    <div id="importation">
+        <form name="importerform" method="post" id="id_importerform" action="{% url family_importer %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ importer_form.as_p }}
+            <input type="submit" name="importer" id="id_importer" value="Importer" />
+        </form>
+    </div>
+</body>
+{% endblock %}

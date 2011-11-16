@@ -1,0 +1,6 @@
+<form action="{% url people_add %}" method="POST" id="form" name="form">       
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input id="id_submit" type="submit" value="Add" />
+    <br/>
+</form>
